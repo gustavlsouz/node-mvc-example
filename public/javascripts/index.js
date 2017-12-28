@@ -12,6 +12,10 @@ var main = function() {
 
 	// funções
 
+	var init = function () {
+		$.get('get', mount);
+	};
+
 	var mount = function (data) {
 		console.log(data);
 
@@ -107,7 +111,7 @@ var main = function() {
 			let el = $('#' + obj.name);
 			el.val('');
 		});
-	}
+	};
 
 	// eventos
 
@@ -157,7 +161,7 @@ var main = function() {
 		let tipoPessoa;
 
 		if (pesq === '') {
-			init();
+			pesq = '*';
 		}
 		
 		$('#opcoes-pesquisa > label > input').each(function(idx, elToSelect) {
@@ -172,10 +176,6 @@ var main = function() {
 			mount(data);
 		});
 	});
-	
-	var init = function() {
-		$.get('get', mount);
-	}
 
 	// primeira pesquisa
 	init();

@@ -56,31 +56,36 @@ module.exports = (app) => {
 				, tipoPessoa = req.params.tipoPessoa
 				;
 
-			let re = /^[a-zA-Z ]{3,30}$/;
+			let re = /^[a-zA-Z *]{0,30}$/;
 
-			query.nome = new RegExp(texto, 'i');
+			let txtTest = re.test(texto);
+
+			if (txtTest && texto !== '*') {
+				query.nome = new RegExp(texto, 'i');
+			} 
 
 			if (tipoPessoa === 'passageiro') {
 				query.flgPassageiro = true;
 			} else if (tipoPessoa === 'motorista') {
 				query.flgPassageiro = false;
 			}
+
 			console.log(`Query: \n\n`, query);
 
-			if (re.test(texto)) {
-				PessoasModel.find(query)
-					.select({
-						'modeloCarro': false
-						, '__v': false
-						, 'dataNascimento': false
-						, 'cpf': false, 'sexo': false
-						, 'modeloCarro': false
-						, 'corridas': false
-					})
-					.exec((err, data) => {
-						res.status(200).json(data);
-					})
-			}
+			PessoasModel.find(query)
+				.limit(50)
+				.select({
+					'modeloCarro': false
+					, '__v': false
+					, 'dataNascimento': false
+					, 'cpf': false, 'sexo': false
+					, 'modeloCarro': false
+					, 'corridas': false
+				})
+				.exec((err, data) => {
+					res.status(200).json(data);
+				})
+			
 		}
 	};
 	return HomeController;
