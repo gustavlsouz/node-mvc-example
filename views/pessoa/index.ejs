@@ -1,0 +1,41 @@
+<% include ../header %>
+<body>
+	<header>
+		<!-- <script type="text/javascript" src="/javascripts/pessoa.js"></script> -->
+		<title><%= data.nome %></title>
+	</header>
+	<div>
+		
+		<a href="/">
+			<button type="button" class="btn btn-primary btn-md">Retornar</button>
+		</a>
+	</div>
+	<div id="informacoes">
+		<div id="nome">
+			<h5><%= data.nome %></h5>
+		</div>
+		<div id="dataNascimento">
+			<h5><%= data.dataNascimento %></h5>
+		</div>
+		<div id="cpf">
+			<h5><%= data.cpf %></h5>
+		</div>
+		<div id="sexo">
+			<h5><%= data.sexo %></h5>
+		</div>
+		<div id="modeloCarro">
+			<h5><%= data.modeloCarro %></h5>
+		</div>
+		<div id="status">
+			<h5><%= data.status %></h5>
+		</div>
+		<div id="flgPassageiro">
+			<h5><%= data.flgPassageiro %></h5>
+		</div>
+		<div id="corridas">
+			<h5><%= data.corridas %></h5>
+		</div>
+	</div>
+	<%include ../footer %>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+  padding: 50px;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-control {
+  padding: 5px;
+  width: 75%;
+}
+
+#resultados {
+  padding: 15px;
+}
+
+#informacoes {
+  padding: 15px;
+}
+
+.btn.cadastro {
+  vertical-align: top;
+  margin: 5px;
+}
+
+.input-group {
+  min-width: 300px;
+  max-width: 800px;
+}
+
+div #container-pesquisa {
+  margin: .25rem;
+  padding: .25rem;
+}
+
+div #opcoes-pesquisa {
+  position: left;
+}
+
+.footer {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(75, 75, 75);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+input, select {
+  min-width: 300px;
+  max-width: 800px;
+}
+
+input.form-check-input {
+  min-width: 3px;
+  max-width: 10px;
+}
+
+span.option {
+  padding: .40rem;
+}
